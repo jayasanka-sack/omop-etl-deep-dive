@@ -129,7 +129,20 @@ services:
     profiles:
       - manual
 
-
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8001:80"
+    depends_on:
+      - omop-db
+    volumes:
+      - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
+    profiles:
+      - manual
 
 volumes:
   db-data: ~
