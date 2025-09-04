@@ -80,8 +80,10 @@ You can access the database at `localhost:5433` with following credentials:
 - **host:** localhost
 - **Port:** 5433
 
-### Accessing the Database with PgAdmin
+### 🎉 _That's it! You now have a local OMOP CDM database populated with data from OpenMRS!!_
 
+### Accessing the Database with PgAdmin
+If you want to explore the OMOP database using a graphical interface, you can use PgAdmin. It is included in the current setup so you don't need to install it separately.
 ```bash
 docker compose run --rm --service-ports pgadmin
 ```
@@ -96,7 +98,7 @@ Access PgAdmin at [http://localhost:8001](http://localhost:8001) with:
 
 <img src="/docs/img/pgadmin.jpeg">
 
-### 🎉 _That's it! You now have a local OMOP CDM database populated with data from OpenMRS!!_
+
 
 
 Once your work is done, you can stop the services with:
