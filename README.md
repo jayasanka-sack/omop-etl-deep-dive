@@ -82,23 +82,54 @@ You can access the database at `localhost:5433` with following credentials:
 
 ### 🎉 _That's it! You now have a local OMOP CDM database populated with data from OpenMRS!!_
 
-### Accessing the Database with PgAdmin
+### Accessing the Database with cloudBeaver
 If you want to explore the OMOP database using a graphical interface, you can use PgAdmin. It is included in the current setup so you don't need to install it separately.
-```bash
-docker compose run --rm --service-ports pgadmin
-```
-Access PgAdmin at [http://localhost:8001](http://localhost:8001) with:
-- **Email:**: admin@admin.com
-- **Password:** admin
 
+Access CloudBeaver at [http://localhost:8978](http://localhost:8978) with:
 
 - Then from the left sidebar, click on servers > OMOP Postgres to connect to the OMOP database.
-- Once prompted, enter the password: `omop`
-- expand the databse > omop > schemas > public > tables to see the tables created in the OMOP CDM. Click on any table and click All rows from toolbar to see the data.
-
-<img src="/docs/img/pgadmin.jpeg">
 
 
+# Create a PostgreSQL Connection in CloudBeaver
+
+## 1. Create an Admin Account
+
+1. Open CloudBeaver in your browser:  
+   [http://localhost:8978](http://localhost:8978)
+
+2. The **Setup Wizard** will appear the first time you run CloudBeaver.
+
+3. Enter your desired **Admin username** (e.g., `cbadmin`).
+
+4. Enter and confirm your **Admin password** (e.g., `Admin@123`).
+
+5. Complete the wizard to create the admin account.
+
+6. Use these credentials to log in to CloudBeaver.
+
+## 2. Create a PostgreSQL Connection
+
+1. Open CloudBeaver in your browser:  
+   [http://localhost:8978](http://localhost:8978)
+
+2. Log in with your **CloudBeaver admin credentials**.
+
+3. From the top menu, click **New Connection**.
+
+4. In the connection type list, select **PostgreSQL**.
+
+5. Fill in the connection details:
+   - **Host**: `omop-db` (or your PostgreSQL host)
+   - **Port**: `5432` (default PostgreSQL port, update if different)
+   - **Database**: (enter your database name, e.g., `omop`)
+   - **User name**: `omop`
+   - **Password**: (your PostgreSQL user password)
+
+6. (Optional) Click **Test Connection** to verify the details.
+
+7. Click **Create** to save the connection.
+
+<img src="/docs/img/initiate-new-connection.png" alt="SQLMesh UI"> width="600"/>
 
 
 Once your work is done, you can stop the services with:
