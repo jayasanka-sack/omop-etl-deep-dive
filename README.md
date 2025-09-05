@@ -129,7 +129,7 @@ Access CloudBeaver at [http://localhost:8978](http://localhost:8978) with:
 
 7. Click **Create** to save the connection.
 
-<img src="/docs/img/initiate-new-connection.png" alt="SQLMesh UI"> width="600"/>
+<img src="/docs/img/initiate-new-connection.png"> width="600"/>
 
 
 Once your work is done, you can stop the services with:
