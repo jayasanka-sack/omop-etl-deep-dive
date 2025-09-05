@@ -83,7 +83,7 @@ You can access the database at `localhost:5433` with following credentials:
 ### 🎉 _That's it! You now have a local OMOP CDM database populated with data from OpenMRS!!_
 
 ### Accessing the Database with cloudBeaver
-If you want to explore the OMOP database using a graphical interface, you can use PgAdmin. It is included in the current setup so you don't need to install it separately.
+If you want to explore the OMOP database using a graphical interface, you can use CloudBeaver. It is included in the current setup so you don't need to install it separately.
 
 Access CloudBeaver at [http://localhost:8978](http://localhost:8978) with:
 
