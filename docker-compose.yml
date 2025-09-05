@@ -1,18 +1,6 @@
 version: '3.8'
 
 services:
-  cloudbeaver:
-    image: dbeaver/cloudbeaver:latest
-    container_name: cloudbeaver
-    restart: unless-stopped
-    ports:
-      - "8978:8978" # Web UI exposed on http://localhost:8978
-    environment:
-      CB_ADMIN_NAME: openmrs
-      CB_ADMIN_PASSWORD: openmrs
-    volumes:
-      - ./cloudbeaver-data:/opt/cloudbeaver/workspace
-      
   sqlmesh-db:
     image: mariadb:10.11.7
     restart: "unless-stopped"
@@ -155,9 +143,21 @@ services:
       - ./pgadmin/servers.json:/pgadmin4/servers.json:ro
     profiles:
       - manual
+    
+  
+  cloudbeaver:
+    image: dbeaver/cloudbeaver:latest
+    container_name: cloudbeaver
+    restart: unless-stopped
+    ports:
+      - "8978:8978" # Web UI exposed on http://localhost:8978
+    volumes:
+      - cloudbeaver-data:/opt/cloudbeaver/workspace
+
 
 volumes:
   db-data: ~
   postgres_data: ~
   jdbc-drivers-data: ~
   cdm-postprocessing-data: ~
+  cloudbeaver-data: ~
